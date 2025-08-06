@@ -1,0 +1,61 @@
+# Entornos virtuales
+venv/
+env/
+
+# Configuración de entorno
+.env
+*.env
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de logs y salida
+*.log
+*.out
+*.pid
+
+# Archivos de bases de datos temporales o de prueba
+*.sqlite3
+*.db
+*.sql
+
+# Archivos de caché o temporales
+.cache/
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Archivos de IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Docker
+*.tar
+docker-compose.override.yml
+
+# Kubernetes
+*.yaml~
+*.yml~
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Pruebas
+htmlcov/
+coverage.xml
+.tox/
+nosetests.xml
+pytest_cache/
+junit-*.xml
+
+# Informes
+*.pdf
+*.docx
+*.xlsx
