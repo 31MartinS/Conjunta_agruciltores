@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: central-service
+  labels:
+    app: central-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: central-service
+  template:
+    metadata:
+      labels:
+        app: central-service
+    spec:
+      containers:
+        - name: central-service
+          image: central-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/inventory
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: admin123
+            - name: SPRING_RABBITMQ_HOST
+              value: rabbitmq
+            - name: SPRING_RABBITMQ_PORT
+              value: "5672"
+            - name: SPRING_RABBITMQ_USERNAME
+              value: guest
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: guest
+            - name: SPRING_PROFILES_ACTIVE
+              value: default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: central-service
+spec:
+  selector:
+    app: central-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
