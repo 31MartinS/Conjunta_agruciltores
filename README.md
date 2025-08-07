@@ -108,6 +108,23 @@ Sigue estos pasos para desplegar los microservicios en Kubernetes usando Minikub
    - Inventory-Service estará disponible en `http://localhost:3000`
    - Billing-Service estará disponible en `http://localhost:5000`
 
+
+## Capturas de Pantalla de la Ejecución
+
+A continuación, se muestran capturas de pantalla que ilustran el funcionamiento del proyecto:
+
+- **Prueba de API con Postman**  
+  ![Prueba de API con Postman](images/postman_api_test.jpeg)  
+  Esta imagen muestra una solicitud POST exitosa a la API de agricultures.
+
+- **Logs del Servicio de Inventario**  
+  ![Logs del Servicio de Inventario](images/inventory_service_logs.jpeg)  
+  Esta imagen muestra los logs del servicio de inventario ejecutándose localmente.
+
+- **Panel de Kubernetes**  
+  ![Panel de Kubernetes](images/kubernetes_dashboard.jpeg)  
+  Esta imagen muestra el estado de los despliegues en el dashboard de Kubernetes.
+
 ## Notas
 
 - Asegúrate de que todos los prerrequisitos estén instalados y configurados correctamente antes de iniciar el despliegue.
